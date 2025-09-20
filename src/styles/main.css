@@ -1,0 +1,295 @@
+body {
+    background-color: #181818;
+    background-image: radial-gradient(circle at 50% 30%, #ff00cc22 0%, #181818 70%);
+    font-family: 'Dancing Script', cursive, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+
+.word {
+    position: absolute;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    animation: float 3s infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.te-amo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffcccb;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}.heart-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 50px auto;
+}
+
+.heart {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.heart-word {
+    position: absolute;
+    font-size: 22px;
+    color: #ffff40;
+    font-family: 'Dancing Script', cursive, sans-serif;
+    pointer-events: none;
+    user-select: none;
+    transition: opacity 0.5s;
+    opacity: 1;
+    text-shadow:
+        0 0 8px #ffff40,
+        0 0 16px #ffff40,
+        0 0 32px #f1ff5b;
+}
+.te-amo-nombre {
+    color: #ff0000;
+    text-shadow:
+        0 0 8px #ff0000,
+        0 0 16px #ff0000,
+        0 0 32px #ff4d4d;
+}
+.photos-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.photo-card {
+    position: absolute;
+    width: 180px;
+    text-align: center;
+    pointer-events: auto;
+}
+
+.photos-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.photo-card {
+    position: absolute;
+    width: 160px;
+    padding: 12px;
+    background: #222;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px #0006;
+    text-align: center;
+    pointer-events: auto;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: photo-in 1s forwards, photo-float 4s 1s infinite ease-in-out;
+}
+.rounded-photo {
+    width: 136px;         /* tamaño mediano de la foto */
+    height: 146px;
+    object-fit: cover;
+    border-radius: 12px;  /* borde redondeado de la foto */
+    border: none;         /* sin borde */
+    box-shadow: none;     /* sin sombra */
+}
+
+.photo-caption {
+    margin-top: 6px;
+    color: #f0d0e9;
+    font-size: 24px;
+    font-family: 'Dancing Script', cursive, sans-serif;
+    text-shadow: 0 0 8px #f0cce9;
+}
+
+/* Ejemplo de posiciones para esparcir las fotos */
+.photo-card:nth-child(1) { top: 20px; left: 20px; }
+.photo-card:nth-child(2) { top: 200px; left: 220px; }
+.photo-card:nth-child(3) { top: 80px; left: 180px; }
+/* Agrega más reglas para más fotos */
+
+.photo-caption {
+    margin-top: 6px;
+    color: #ffe2f9;
+    font-size: 14px;
+    font-family: 'Dancing Script', cursive, sans-serif;
+    text-shadow: 0 0 8px #ffd6f7;
+}
+
+.hidden {
+    display: none;
+}
+/* Ejemplo de posiciones para esparcir las fotos */
+.photo-card:nth-child(1) { top: 20px; left: 20px; }
+.photo-card:nth-child(2) { top: 200px; left: 220px; }
+.photo-card:nth-child(3) { top: 80px; left: 180px; }
+/* Agrega más reglas para más fotos */
+@keyframes photo-in {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes photo-float {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-12px); }
+    100% { transform: translateY(0); }
+}
+
+/* ...existing code... */
+
+.encantas-text {
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    color: #ffff40;
+    font-family: 'Dancing Script', cursive, sans-serif;
+    margin-bottom: 8px; /* Menor espacio debajo */
+    margin-top: 0;
+    text-shadow: 0 0 8px #ffff40, 0 0 16px #f1ff5b;
+    transition: opacity 0.7s;
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    animation: encantas-fade-in 1s ease;
+}
+
+@keyframes encantas-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.heart-container {
+    margin-top: 32px; /* Menor espacio arriba */
+    margin-bottom: 0; /* Sin espacio extra abajo */
+}
+
+/* Responsive: abajo del corazón en móvil */
+@media (max-width: 600px) {
+    .encantas-text {
+        position: static;
+        font-size: 1.4rem;
+        margin-top: 8px;
+        margin-bottom: -18rem;
+        animation: encantas-fade-in 1s ease;
+    }
+    .heart-container {
+        margin-top: 16px;
+        margin-bottom: 0;
+    }
+    .photos-container {
+        padding-top: 0;
+        padding-bottom: 16px;
+    }
+}
+/* ...existing code... */
+
+@media (max-width: 600px) {
+    body {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        height: auto;
+        min-height: 100vh;
+        padding: 0;
+    }
+
+    .heart-container {
+        width: 96vw;
+        height: 96vw;
+        min-width: 220px;
+        min-height: 220px;
+        max-width: 340px;
+        max-height: 340px;
+        margin: 24px auto 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .heart-word {
+        font-size: 20px;
+    }
+
+    .photos-container {
+        width: 100vw;
+        height: auto;
+        top: unset;
+        left: unset;
+        position: static;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        padding: 12px 0 32px 0;
+        padding-top: 0;
+        justify-items: center;
+        align-items: flex-start;
+    }
+
+    .photo-card {
+        position: static !important;
+        width: 44vw;
+        max-width: 180px;
+        margin: 0 auto;
+        padding: 8px;
+        opacity: 1;
+        transform: none;
+        animation: photo-float 4s infinite ease-in-out;
+        box-sizing: border-box;
+    }
+
+    .rounded-photo {
+        width: 40vw;
+        max-width: 160px;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .photo-caption {
+        font-size: 16px;
+        margin-top: 4px;
+    }
+}
+
+/* ...existing code... */

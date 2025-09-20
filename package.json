@@ -1,0 +1,20 @@
+{
+  "name": "san-valentin-web",
+  "version": "1.0.0",
+  "description": "A web project to celebrate Valentine's Day with a heart formed by words and animations.",
+  "main": "src/index.html",
+  "scripts": {
+    "start": "live-server src"
+  },
+  "keywords": [
+    "valentines",
+    "heart",
+    "words",
+    "love"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "live-server": "^1.2.1"
+  }
+}
